@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío 1 - JavaScript</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <section>
+        <div class="card">
+            <div class="img-card"></div>
+              <h6>Laptop Gamer AMD</h6>
+              <p>Precio base: $<span id="precio-inicial" class="precio-inicial"></span> </p>
+        
+              <p>Cantidad:
+                <span id="cantidad_v">0</span>
+                <button onclick="
+                    valor = document.querySelector('#cantidad_v')
+                    sumando = Number(valor.innerHTML)
+                    sumando = sumando + 1
+                    valor.innerHTML = sumando
+                    
+                    valor_base = document.querySelector('#precio-inicial')
+                    valor_base_numero = Number(valor_base.innerHTML)
+
+                    precio_t=document.querySelector('#valor-total')
+                    valor_final = valor_base_numero * sumando
+                    precio_t.innerHTML = valor_final.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' })
+                ">+</button>
+                
+                <button onclick="
+                    valor = document.querySelector('#cantidad_v')
+                    restando = Number(valor.innerHTML)
+                    restando = restando - 1
+                    valor.innerHTML = restando
+
+                    valor_base = document.querySelector('#precio-inicial')
+                    valor_base_numero = Number(valor_base.innerHTML)
+
+                    precio_t=document.querySelector('#valor-total')
+                    valor_final = valor_base_numero * restando
+                    precio_t.innerHTML = valor_final.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' })
+                ">-</button>
+              </p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="total-section">
+        <p>Total a pagar:  <span id="valor-total" class="valor-total"></span> </p>
+    </div>
+
+    <script src="index.js">
+      
+
+    </script>
+</body>
+</html>
